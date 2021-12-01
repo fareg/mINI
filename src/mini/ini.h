@@ -159,6 +159,7 @@ namespace mINI
 
 	public:
 		using const_iterator = typename T_DataContainer::const_iterator;
+		using iterator = typename T_DataContainer::iterator;
 
 		INIMap() { }
 
@@ -278,6 +279,8 @@ namespace mINI
 		}
 		const_iterator begin() const { return data.begin(); }
 		const_iterator end() const { return data.end(); }
+		iterator ncbegin() { return data.begin(); }
+		iterator ncend() { return data.end(); }
 	};
 
 	using INIStructure = INIMap<INIMap<std::string>>;
